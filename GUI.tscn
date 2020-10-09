@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SwipeLine.tscn" type="PackedScene" id=2]
+[ext_resource path="res://BoidNum.gd" type="Script" id=3]
+[ext_resource path="res://NectarNum.gd" type="Script" id=4]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="SwipeLine" parent="." instance=ExtResource( 2 )]
+
+[node name="BoidNum" type="Label" parent="."]
+margin_right = 116.0
+margin_bottom = 16.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NectarNum" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -124.0
+margin_bottom = 14.0
+align = 2
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,174 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Nectar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Hive.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Holders.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Rock1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/test_map.png" type="Texture" id=7]
+[ext_resource path="res://Rock2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://WaxPile.tscn" type="PackedScene" id=9]
+[ext_resource path="res://WaxPile2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Level.gd" type="Script" id=11]
+
+[node name="TestLevel2" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="test_map" type="Sprite" parent="."]
+position = Vector2( 400, 600 )
+texture = ExtResource( 7 )
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
+polygon = PoolVector2Array( 328, 40, 272, 40, 208, 48, 128, 56, 88, 72, 56, 80, 24, 104, 16, 144, 32, 200, 40, 320, 48, 432, 40, 488, 40, 552, 56, 648, 56, 736, 48, 808, 40, 832, 40, 880, 40, 936, 32, 1000, 64, 1064, 80, 1104, 120, 1152, 200, 1152, 256, 1144, 312, 1144, 392, 1152, 680, 1152, 712, 1136, 744, 1096, 744, 960, 728, 864, 720, 816, 736, 752, 752, 704, 752, 520, 752, 472, 744, 400, 744, 328, 752, 288, 736, 208, 696, 136, 640, 88, 600, 64, 424, 64, 328, 40, 328, 0, 328, 0, 800, 0, 800, 1200, 0, 1200, 0, 0, 328, 0 )
+
+[node name="Rocks1" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks1"]
+polygon = PoolVector2Array( 424, 64, 424, 104, 440, 152, 472, 184, 456, 208, 432, 208, 400, 152, 384, 96, 384, 56 )
+
+[node name="Rocks2" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks2"]
+polygon = PoolVector2Array( 752, 264, 688, 272, 624, 256, 568, 248, 520, 224, 504, 240, 528, 264, 616, 296, 680, 312, 744, 328 )
+
+[node name="Shovel" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shovel"]
+polygon = PoolVector2Array( 240, 40, 240, 80, 216, 96, 216, 136, 240, 152, 248, 224, 160, 224, 160, 176, 176, 152, 200, 136, 208, 96, 192, 88, 192, 48 )
+
+[node name="Bucket" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bucket"]
+polygon = PoolVector2Array( 744, 376, 512, 248, 376, 392, 392, 432, 400, 448, 568, 592, 584, 568, 496, 512, 392, 400, 536, 272, 744, 416 )
+
+[node name="BucketHandle" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BucketHandle"]
+polygon = PoolVector2Array( 672, 568, 728, 504, 736, 512, 680, 576 )
+
+[node name="Rocks3" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks3"]
+polygon = PoolVector2Array( 40, 536, 88, 544, 128, 560, 120, 592, 88, 576, 40, 576 )
+
+[node name="Rocks4" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks4"]
+polygon = PoolVector2Array( 392, 424, 360, 432, 320, 464, 264, 520, 192, 552, 200, 584, 232, 584, 272, 552, 320, 528, 368, 504, 400, 448 )
+
+[node name="Bottle" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottle"]
+polygon = PoolVector2Array( 736, 768, 728, 752, 712, 760, 680, 752, 672, 728, 592, 688, 584, 688, 560, 712, 560, 728, 528, 720, 496, 744, 480, 760, 392, 752, 368, 760, 368, 768, 408, 776, 496, 776, 512, 752, 536, 744, 584, 752, 592, 792, 568, 832, 552, 840, 512, 840, 496, 864, 480, 896, 504, 896, 520, 864, 568, 856, 600, 824, 616, 784, 600, 752, 632, 768, 664, 768, 704, 776, 704, 792, 728, 792 )
+
+[node name="Doll" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Doll"]
+polygon = PoolVector2Array( 336, 840, 352, 856, 328, 880, 336, 888, 352, 896, 344, 904, 320, 896, 320, 928, 312, 952, 304, 944, 304, 920, 272, 944, 264, 936, 296, 912, 296, 888, 280, 880, 280, 872, 312, 880, 320, 872, 312, 856 )
+
+[node name="SandCastle" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 123
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SandCastle"]
+polygon = PoolVector2Array( 40, 1024, 40, 1016, 48, 976, 88, 936, 136, 912, 160, 888, 176, 840, 176, 816, 136, 784, 136, 744, 168, 712, 200, 712, 232, 744, 272, 752, 264, 768, 232, 768, 208, 736, 176, 728, 152, 752, 168, 784, 200, 808, 168, 896, 168, 920, 112, 952, 72, 976, 56, 1000, 80, 1040, 120, 1048, 168, 1024, 184, 1000, 216, 984, 376, 1024, 392, 1048, 392, 1072, 456, 1104, 528, 1080, 536, 1064, 536, 1040, 496, 1024, 480, 1000, 472, 960, 496, 960, 496, 1008, 536, 1024, 568, 1056, 536, 1104, 504, 1128, 448, 1128, 384, 1104, 376, 1056, 192, 1008, 168, 1048, 120, 1072, 48, 1040 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 688, 224 )
+
+[node name="Camera2D" parent="Player" index="2"]
+limit_left = 0
+limit_top = 0
+
+[node name="Holders" parent="." instance=ExtResource( 4 )]
+
+[node name="Rock1" parent="Holders/Objects" index="0" instance=ExtResource( 6 )]
+position = Vector2( 488, 216 )
+
+[node name="Rock2" parent="Holders/Objects" index="1" instance=ExtResource( 8 )]
+position = Vector2( 160, 576 )
+
+[node name="Hive" parent="Holders/Hives" index="0" instance=ExtResource( 2 )]
+position = Vector2( 536, 104 )
+
+[node name="WaxPile" parent="Holders/Hives" index="1" instance=ExtResource( 9 )]
+position = Vector2( 112, 400 )
+
+[node name="WaxPile2" parent="Holders/Hives" index="2" groups=[
+"Targets",
+] instance=ExtResource( 10 )]
+position = Vector2( 648, 864 )
+input_pickable = true
+collision_layer = 8
+collision_mask = 3
+
+[node name="Nectar" parent="Holders/Nectar" index="0" instance=ExtResource( 1 )]
+position = Vector2( 624, 192 )
+
+[node name="Nectar2" parent="Holders/Nectar" index="1" instance=ExtResource( 1 )]
+position = Vector2( 616, 160 )
+
+[node name="Nectar3" parent="Holders/Nectar" index="2" instance=ExtResource( 1 )]
+position = Vector2( 584, 184 )
+
+[node name="Nectar4" parent="Holders/Nectar" index="3" instance=ExtResource( 1 )]
+position = Vector2( 312, 104 )
+
+[node name="Nectar5" parent="Holders/Nectar" index="4" instance=ExtResource( 1 )]
+position = Vector2( 328, 96 )
+
+[node name="Nectar6" parent="Holders/Nectar" index="5" instance=ExtResource( 1 )]
+position = Vector2( 96, 120 )
+
+[node name="Nectar7" parent="Holders/Nectar" index="6" instance=ExtResource( 1 )]
+position = Vector2( 80, 128 )
+
+[node name="Nectar8" parent="Holders/Nectar" index="7" instance=ExtResource( 1 )]
+position = Vector2( 80, 112 )
+
+[node name="Nectar9" parent="Holders/Nectar" index="8" instance=ExtResource( 1 )]
+position = Vector2( 560, 336 )
+
+[node name="Nectar10" parent="Holders/Nectar" index="9" instance=ExtResource( 1 )]
+position = Vector2( 536, 336 )
+
+[node name="Nectar11" parent="Holders/Nectar" index="10" instance=ExtResource( 1 )]
+position = Vector2( 520, 352 )
+
+[node name="Nectar12" parent="Holders/Nectar" index="11" instance=ExtResource( 1 )]
+position = Vector2( 104, 872 )
+
+[node name="Nectar13" parent="Holders/Nectar" index="12" instance=ExtResource( 1 )]
+position = Vector2( 88, 880 )
+
+[node name="Nectar14" parent="Holders/Nectar" index="13" instance=ExtResource( 1 )]
+position = Vector2( 104, 888 )
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+
+[editable path="Player"]
+
+[editable path="Holders"]

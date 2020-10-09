@@ -2,15 +2,13 @@ extends Line2D
 
 var _start_point = Vector2.ZERO
 
-func _process(_delta):
-	if Input.is_action_pressed("click"):
+func _input(event):
+	if event is InputEventScreenTouch and event.pressed:
+		_start_point = event.position
+	elif event is InputEventScreenDrag:
 		clear_points()
 		add_point(_start_point)
-		add_point(get_global_mouse_position())
-	else:
+		add_point(event.position)
+	elif event is InputEventScreenTouch and not event.pressed:
 		clear_points()
-
-func _input(event):
-	if event.is_action_pressed("click"):
-		_start_point = get_global_mouse_position()
 
